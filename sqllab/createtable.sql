@@ -14,5 +14,5 @@ CREATE TABLE earthquakes (
   quaketype text,
   statusCheck text,
   locationPlace text,
-  magSource text,
+  magSource text
 );
