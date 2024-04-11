@@ -1,11 +1,11 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
-  latitude NUMERIC(5, 2),
-  longitude NUMERIC(5, 2),
-  quakedepth NUMERIC(5, 2),
-  mag NUMERIC(5, 2),
+  latitude real,
+  longitude real,
+  quakedepth real,
+  mag real,
   magType text,
-  rms NUMERIC(5, 2),
+  rms real,
   net text,
   id text,
   place text,
