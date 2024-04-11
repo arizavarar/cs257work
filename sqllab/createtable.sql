@@ -1,6 +1,5 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
-  quaketime TIMESTAMPTZ,
   latitude NUMERIC(5, 2),
   longitude NUMERIC(5, 2),
   quakedepth NUMERIC(5, 2),
@@ -9,7 +8,6 @@ CREATE TABLE earthquakes (
   rms NUMERIC(5, 2),
   net text,
   id text,
-  updated TIMESTAMPTZ,
   place text,
   quaketype text,
   statusCheck text,
