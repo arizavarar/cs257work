@@ -9,7 +9,7 @@ def createTables():
 
     cur = conn.cursor()
 
-    sql = """    DROP TABLE IF EXISTS us_state_pop;
+    sql = """DROP TABLE IF EXISTS us_state_pop;
     CREATE TABLE us_state_pop (
     code text,
     state text,
@@ -25,8 +25,8 @@ def createTables():
     longitude real
     );"""
     
-    cur.execute( sql )
+    cur.execute(sql)
 
     conn.commit()
-    cur.close()
+createTables()
 
