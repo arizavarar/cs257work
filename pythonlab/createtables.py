@@ -28,5 +28,5 @@ def createTables():
     cur.execute( sql )
 
     conn.commit()
-    cur.close()
+
 
