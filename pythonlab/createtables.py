@@ -9,15 +9,15 @@ def createTables():
 
     cur = conn.cursor()
 
-    sql = """DROP TABLE IF EXISTS us_state_pop;
-    CREATE TABLE us_state_pop (
+    sql = """DROP TABLE IF EXISTS us_state_pop2;
+    CREATE TABLE us_state_pop2 (
     code text,
     state text,
     population real
     );
 
-    DROP TABLE IF EXISTS us_city_pop;
-    CREATE TABLE us_city_pop (
+    DROP TABLE IF EXISTS us_city_pop2;
+    CREATE TABLE us_city_pop2 (
     city text,
     city_state text,
     city_population  real,
