@@ -120,7 +120,7 @@ def citiesFurthestInEachdirection():
             westSpotName = row[0]
     
     stringCities = "These are the cities at the furthest spot in each direction "
-    return print(stringCities + "\n" "North: " + northSpotName + "South: " + southSpotName + "East: " + eastSpotName + "West: " + westSpotName)
+    return print(stringCities + "\n" "North: " + northSpotName + " South: " + southSpotName + " East: " + eastSpotName + " West: " + westSpotName)
 
 def printOutCityPopulationTotal():
     conn = psycopg2.connect(
@@ -141,7 +141,7 @@ def printOutCityPopulationTotal():
 
     rows = cur.fetchall()
 
-    combinedCityPop: 0
+    combinedCityPop = 0
     nameOfState = ""
 
     for row in rows:
