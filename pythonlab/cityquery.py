@@ -48,7 +48,7 @@ def printLargestCityName():
             pop = row[1]
             maxPop = row[0]
 
-    return maxPop
+    return print("This is the city with the largest population: " + maxPop)
 
 def checkSmallestCityMN():
     conn = psycopg2.connect(
