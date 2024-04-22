@@ -20,8 +20,6 @@ def checkForNorthfield():
         print("Northfield is not in the dataset")
     else:
         print(row[1], row[2])
-    
-    conn.commit()
 
     return None
 
@@ -78,3 +76,7 @@ def checkSmallestCityMN():
             smallestCity = row[0]
     
     return print("This is the smallest city in MN: " + smallestCity)
+
+checkForNorthfield()
+printLargestCityName()
+checkSmallestCityMN()
