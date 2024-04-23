@@ -148,7 +148,7 @@ def printOutCityPopulationTotal():
         combinedCityPop += row[2]
         nameOfState = row[1]
 
-    return print("This is the combined population for all the cities in " + nameOfState + ": " + combinedCityPop)
+    return print("This is the combined population for all the cities in " + nameOfState + ": " + str(combinedCityPop))
 
 
 checkForNorthfield()
