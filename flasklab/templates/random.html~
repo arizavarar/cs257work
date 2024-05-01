@@ -2,14 +2,14 @@
 <html>
  
 <head>
-    <title style="color:purple">Fun With Random Numbers</title>
+    <title style="color:SlateBlue">Fun With Random Numbers</title>
 </head>
  
 <body>
     <h2>Fun with Random Numbers</h2>
     <p>I have asked for a random number is it is:<p>
 
-    <p style="color:yellow">!!! {{randNum}} !!!</p>
+    <p style="color:Orange">!!! {{randNum}} !!!</p>
 </body>
  
 </html>
