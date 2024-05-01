@@ -49,7 +49,7 @@ def printOutCityPopulationTotal(abbrev):
         combinedCityPop += row[2]
         nameOfState = row[1]
 
-    return print("This is the combined population for all the cities in " + nameOfState + ": " + str(combinedCityPop))
+    return "This is the combined population for all the cities in " + nameOfState + ": " + str(combinedCityPop)
 
 if __name__ == '__main__':
     my_port = 5111
