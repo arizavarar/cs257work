@@ -9,7 +9,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("webApp.html")
 
-@app.route('/', methods=['post'])
+@app.route('/stateChosen', methods=['post'])
 def getValue():
     name = request.form['fname']
     state = request.form['state']
