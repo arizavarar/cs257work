@@ -9,7 +9,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("webApp.html")
 
-@app.route('/stateChosen', methods=['post'])
+@app.route('/', methods=['post'])
 def getValue():
     name = request.form['fname']
     state = request.form['state']
@@ -36,7 +36,7 @@ def getValue():
     for row in rows:
         combinedCityPop += row[2]
    
-    return render_template("stateChosen.html", n=name, state=state, cityPop =combinedCityPop)
+    return render_template("stateChosen.html")
 
 if __name__ == '__main__':
     my_port = 5111
