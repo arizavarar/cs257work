@@ -10,7 +10,7 @@ def my_function():
 
 @app.route('/display/<word1>/<word2>')
 def my_display(word1, word2):
-    the_string = "The words are: " + word1 + " and " + word2;
+    the_string = "The words are: " + word1 + " and " + word2
     return the_string
 
 @app.route('/color/<word1>')

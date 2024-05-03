@@ -36,7 +36,7 @@ def getValue():
     for row in rows:
         combinedCityPop += row[2]
    
-    return render_template("stateChosen.html")
+    return render_template("stateChosen.html", n=name, state=state, cityPop=str(combinedCityPop))
 
 if __name__ == '__main__':
     my_port = 5111
