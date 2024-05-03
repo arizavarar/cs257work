@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    #return render_template("webApp.html")
+    return render_template("webApp.html")
 
 @app.route('/', methods=["POST"])
 def getValue():
