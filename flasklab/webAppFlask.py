@@ -9,33 +9,41 @@ app = Flask(__name__)
 def welcome():
     return render_template("webApp.html")
 
-@app.route('/', methods=["POST"])
+@app.route('/search', methods=["POST"])
 def getValue():
-    name = request.form.get("fname")
-    state = request.form.get("state")
-    conn = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="arizavarar",
-        user="arizavarar",
-        password="expo795beach") 
-       
-    cur = conn.cursor() 
+    try:
+        name = request.form['fname']
+        state = request.form['state']
 
-    sql = """SELECT city,city_state, city_population, code FROM us_city_pop2 JOIN us_state_pop2 
-    on state = city_state WHERE code = %s OR city_state = %s"""
+        conn = psycopg2.connect(
+            host="localhost",
+            port=5432,
+            database="arizavarar",
+            user="arizavarar",
+            password="expo795beach"
+        )
 
-    userInput = input(state)    
+        cur = conn.cursor()
 
-    cur.execute(sql, (userInput,userInput)) 
+        sql = """SELECT city, city_state, city_population, code 
+                 FROM us_city_pop2 JOIN us_state_pop2 
+                 ON state = city_state WHERE code = %s OR city_state = %s"""
+        
+        userInput = state
 
-    rows = cur.fetchall()   
+        cur.execute(sql, (userInput, userInput))
 
-    combinedCityPop = 0 
+        rows = cur.fetchall()
 
-    for row in rows:
-        combinedCityPop += row[2]
-    return render_template("stateChosen.html", n=name, st=state, cityPop=str(combinedCityPop))
+        combinedCityPop = sum(row[2] for row in rows)
+
+        cur.close()
+        conn.close()
+
+        return render_template("stateChosen.html", n=name, st=state, cityPop=str(combinedCityPop))
+
+    except Exception as e:
+        return "An error occurred: " + str(e)
    
 
 if __name__ == '__main__':
