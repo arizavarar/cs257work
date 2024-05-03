@@ -35,7 +35,7 @@ def getValue():
 
     for row in rows:
         combinedCityPop += row[2]
-   
+    print(name)
     return render_template("stateChosen.html", n=name, st=state, cityPop=str(combinedCityPop))
 
 if __name__ == '__main__':
