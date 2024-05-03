@@ -9,7 +9,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("webApp.html")
 
-@app.route('/', methods = ['POST'])
+@app.route('/', methods=['post'])
 def getValue():
     name = request.form['fname']
     state = request.form['state']
@@ -32,11 +32,9 @@ def getValue():
     rows = cur.fetchall()
 
     combinedCityPop = 0
-    nameOfState = ""
 
     for row in rows:
         combinedCityPop += row[2]
-        nameOfState = row[1]
    
     return render_template('stateChosen.html', n=name, state=state, cityPop =combinedCityPop)
 
