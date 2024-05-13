@@ -25,17 +25,16 @@ def laptopBrandChosen(brand):
     cur.execute(query, (brand,))
 
     rows = cur.fetchall()
-
-    # Check if any laptops were found
-    if rows:
-        print(f"Laptops found for brand {brand}:")
-        for row in rows:
-            print(f"{row[0]} - ${row[1]}")
-    else:
-        print(f"No laptops found for brand {brand}.")
+    
+    for row in rows:
+        string = f"{row[0]} - ${row[1]}"
 
     cur.close()
     conn.close()
+
+    return print(f"Laptops found for brand {brand}: " + string)
+
+    
 
 
 if __name__ == '__main__':
