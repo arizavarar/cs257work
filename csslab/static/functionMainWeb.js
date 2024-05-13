@@ -9,7 +9,7 @@ the_paragraph = document.getElementById("paragraph1");
 the_paragraph.onmouseenter = function() { 
     the_paragraph.style.color = "RoyalBlue";
     the_paragraph.style.backgroundColor = "white";
-};
+}
 
 
 function myFunction() {
@@ -17,7 +17,7 @@ function myFunction() {
 }
 
 // Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
+function clickOut(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
