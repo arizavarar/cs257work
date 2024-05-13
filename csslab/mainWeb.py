@@ -22,17 +22,15 @@ def laptopBrandChosen(brand):
     cur = conn.cursor()
 
     query = "SELECT laptop_name, price FROM laptops WHERE brand = %s;"
-    cur.execute(query, (brand,))
+    cur.execute(query, (brand))
 
     rows = cur.fetchall()
     
-    for row in rows:
-        string = f"{row[0]} - ${row[1]}"
 
     cur.close()
     conn.close()
 
-    return print(f"Laptops found for brand {brand}: " + string)
+    return print(f"Laptops found for brand {brand}: "  + str(rows))
 
     
 
