@@ -30,7 +30,7 @@ def laptopBrandChosen(brand):
     cur.close()
     conn.close()
 
-    return print(f"Laptops found for brand {brand}: "  + str(rows))
+    return f"Laptops found for brand {brand}: " + str(rows)
 
 
 if __name__ == '__main__':
