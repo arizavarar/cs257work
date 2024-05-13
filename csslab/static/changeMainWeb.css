@@ -21,7 +21,7 @@
   
   /* Dropdown Button */
   .dropbtn {
-    background-color: DodgerBlue;
+    background-color: CornflowerBlue;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -42,7 +42,7 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center; /* Align button text to center */
-    width: 700px; /* Set a specific width to center the button */
+    width: 1500; /* Set a specific width to center the button */
   }
   
   /* Dropdown Content (Hidden by Default) */
