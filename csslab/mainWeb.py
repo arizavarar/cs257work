@@ -22,7 +22,7 @@ def laptopBrandChosen(brand):
     cur = conn.cursor()
 
     query = "SELECT laptop_name, price FROM laptops WHERE brand = %s;"
-    cur.execute(query, (brand))
+    cur.execute(query, (brand,))
 
     rows = cur.fetchall()
     
@@ -31,8 +31,6 @@ def laptopBrandChosen(brand):
     conn.close()
 
     return print(f"Laptops found for brand {brand}: "  + str(rows))
-
-    
 
 
 if __name__ == '__main__':
