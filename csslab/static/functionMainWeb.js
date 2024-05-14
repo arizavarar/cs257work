@@ -11,10 +11,19 @@ the_paragraph.onmouseenter = function changeColor() {
     the_paragraph.style.backgroundColor = "white";
 }
 
-var specs;
-function setMonth(){
-  specs = document.getElementById("myDropdown").value;
-  alert(specs);
+var brand;
+function setBrand(){
+    brand = document.getElementById("brand").value;
+}
+
+var ram;
+function setBrand(){
+    ram = document.getElementById("ram").value;
+}
+
+var storage;
+function setBrand(){
+    storage = document.getElementById("storage").value;
 }
 
 function showFunction() {
