@@ -11,7 +11,7 @@ the_paragraph.onmouseenter = function changeColor() {
     the_paragraph.style.backgroundColor = "white";
 }
 
-var month;
+var specs;
 function setMonth(){
   specs = document.getElementById("myDropdown").value;
   alert(specs);

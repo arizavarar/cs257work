@@ -1,53 +1,51 @@
-
 <html>
+
 <body onclick="clickOut(event)" onload="changeColor()">
-<head>
-    <link rel="stylesheet" href="/static/changeMainWeb.css">
-  
-    <script src="/static/functionMainWeb.js"> </script>
-</head>
+
+    <head>
+        <link rel="stylesheet" href="/static/changeMainWeb.css">
+
+        <script src="/static/functionMainWeb.js"> </script>
+    </head>
 
 
-<h1 class="headerText-class" id="webTitle" onclick="rickRoll()">
-    Laptops Specifications!
+    <h1 class="headerText-class" id="webTitle" onclick="rickRoll()">
+        Laptops Specifications!
     </h1>
-    
-    <p class="introductionText-class" id="paragraph1" >
-    This is a webpage dedicated to laptops! It will list all the laptops for the brands listed in the dropdown menu
-    and other specifications in other dropdowns!
+
+    <p class="introductionText-class" id="paragraph1">
+        This is a webpage dedicated to laptops! It will list all the laptops for the brands listed in the dropdown menu
+        and other specifications in other dropdowns!
     </p>
-    
-    <div class="dropdown" >
-      <button onclick="showFunction()" class="dropbtn">Brand Type </button>
-      <select id="myDropdown" class="dropdown-content">
-        <option value="/apple">Apple</option>
-        <option value="/dell">Dell</option>
-        <option value="/hp">HP</option>
-        <option value="/lenovo">Lenovo</option>
-      </select>
-    </div>
 
-    <div class="dropdown" >
-        <button onclick="showFunction()" class="dropbtn">Ram Size </button>
+    <form>
         <select id="myDropdown" class="dropdown-content">
-          <option value="/4">4 GB</option>
-          <option value="/8">8 GB</option>
-          <option value="/16">16 GB</option>
-          <option value="/32">32 GB</option>
+            <option selected disabled>Choose Brand</option>
+            <option value="/apple">Apple</option>
+            <option value="/dell">Dell</option>
+            <option value="/hp">HP</option>
+            <option value="/lenovo">Lenovo</option>
         </select>
-      </div>
 
-      <div class="dropdown" >
-        
         <select id="myDropdown" class="dropdown-content">
-          <option value="/64">64 GB</option>
-          <option value="/256">256 GB</option>
-          <option value="/512">512 GB</option>
-          <option value="/1024">1024 GB</option>
+            <option selected disabled>Choose Ram Size</option>
+            <option value="/4">4 GB</option>
+            <option value="/8">8 GB</option>
+            <option value="/16">16 GB</option>
+            <option value="/32">32 GB</option>
         </select>
-      </div>
 
-      <button type="button" class="button button2">Submit Specs</button>
+        <select id="myDropdown" class="dropdown-content">
+            <option selected disabled>Choose Storage Size</option>
+            <option value="/64">64 GB</option>
+            <option value="/256">256 GB</option>
+            <option value="/512">512 GB</option>
+            <option value="/1024">1024 GB</option>
+        </select>
+    </form>
+
+    <button type="button" class="button button2">Submit Specs</button>
 
 </body>
+
 </html>
