@@ -20,7 +20,7 @@
 
     <form>
         What Brand?
-        <select id="myDropdown" class="dropdown-content">
+        <select id="brand" class="dropdown-content" onchange="setBrand()">
             <option selected disabled>Choose Brand</option>
             <option value="/apple">Apple</option>
             <option value="/dell">Dell</option>
@@ -29,7 +29,7 @@
         </select>
 
         What Ram Size?
-        <select id="myDropdown" class="dropdown-content">
+        <select id="ram" class="dropdown-content" onchange="setRam()">
             <option selected disabled>Choose Ram Size</option>
             <option value="/4">4 GB</option>
             <option value="/8">8 GB</option>
@@ -38,7 +38,7 @@
         </select>
 
         What Storage Size?
-        <select id="myDropdown" class="dropdown-content">
+        <select id="storage" class="dropdown-content" onchange="setStorage()">
             <option selected disabled>Choose Storage Size</option>
             <option value="/64">64 GB</option>
             <option value="/256">256 GB</option>
