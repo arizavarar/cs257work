@@ -1,6 +1,6 @@
 
 <html>
-<body onclick="clickOut(event)">
+<body onclick="clickOut(event)" onload="changeColor()">
 <head>
     <link rel="stylesheet" href="/static/changeMainWeb.css">
   
@@ -13,11 +13,12 @@
     </h1>
     
     <p class="introductionText-class" id="paragraph1" >
-    This is a webpage dedicated to laptops! It will list all the laptops for the brands listed in the dropdown menu.
+    This is a webpage dedicated to laptops! It will list all the laptops for the brands listed in the dropdown menu
+    and other specifications in other dropdowns?
     </p>
     
     <div class="dropdown" >
-      <button onclick="myFunction()" class="dropbtn">Dropdown </button>
+      <button onclick="showFunction()" class="dropbtn">Brand </button>
       <div id="myDropdown" class="dropdown-content">
         <a href="/apple">Apple</a>
         <a href="/dell">Dell</a>

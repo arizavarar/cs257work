@@ -6,13 +6,13 @@ function rickRoll() {
 
 the_paragraph = document.getElementById("paragraph1");
 
-the_paragraph.onmouseenter = function() { 
+the_paragraph.onmouseenter = function changeColor() { 
     the_paragraph.style.color = "RoyalBlue";
     the_paragraph.style.backgroundColor = "white";
 }
 
 
-function myFunction() {
+function showFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
