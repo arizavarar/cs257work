@@ -30,6 +30,12 @@ function showFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+var combinedLink
+function submitCompiledLink() {
+    combinedLink = brand.concat(ram, storage);
+    return href=combinedLink
+}
+
 // Close the dropdown menu if the user clicks outside of it
 function clickOut(event) {
   if (!event.target.matches('.dropbtn')) {
