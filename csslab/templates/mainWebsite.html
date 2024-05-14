@@ -20,7 +20,7 @@
 
     <form style="text-align: center;">
         What Brand?
-        <select id="brand"  onchange="setBrand()">
+        <select id="brand" onchange="setBrand()">
             <option selected disabled>Choose Brand</option>
             <option value="/apple">Apple</option>
             <option value="/dell">Dell</option>
@@ -29,7 +29,7 @@
         </select>
 
         What Ram Size?
-        <select id="ram"  onchange="setRam()">
+        <select id="ram" onchange="setRam()">
             <option selected disabled>Choose Ram Size</option>
             <option value="/4">4 GB</option>
             <option value="/8">8 GB</option>
@@ -46,9 +46,9 @@
             <option value="/1024">1024 GB</option>
         </select>
     </form>
-
-    <button type="button" class="button button2" onclick="submitCompiledLink()">Submit Specs</button>
-
+    <div class="button-container">
+        <button type="button" class="button button2" onclick="submitCompiledLink()">Submit Specs</button>
+    </div>
 </body>
 
 </html>
