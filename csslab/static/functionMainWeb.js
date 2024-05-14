@@ -11,17 +11,17 @@ the_paragraph.onmouseenter = function changeColor() {
     the_paragraph.style.backgroundColor = "white";
 }
 
-var brand;
+var brand = "";
 function setBrand(){
     brand = document.getElementById("brand").value;
 }
 
-var ram;
+var ram = "";
 function setBrand(){
     ram = document.getElementById("ram").value;
 }
 
-var storage;
+var storage = "";
 function setBrand(){
     storage = document.getElementById("storage").value;
 }
@@ -30,10 +30,10 @@ function showFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-var combinedLink
+var combinedLink = "";
 function submitCompiledLink() {
     combinedLink = brand.concat(ram, storage);
-    return href=combinedLink
+    location.href = combinedLink;
 }
 
 // Close the dropdown menu if the user clicks outside of it
