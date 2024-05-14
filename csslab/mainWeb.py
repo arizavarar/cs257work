@@ -8,7 +8,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("mainWebsite.html")
 
-@app.route('/<brand>/int<ram>/<storage>')
+@app.route('/<brand>/<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):
     
     # Establishing Environment
@@ -20,9 +20,9 @@ def laptopBrandChosen(brand, ram, storage):
         password="field599farm")
     
     cur = conn.cursor()
-
+    intRam = int(ram)
     query = "SELECT laptop_name, price FROM laptops WHERE brand = %s AND RAM = %s AND Storage_Type = %s;"
-    cur.execute(query, (brand, ram, storage,))
+    cur.execute(query, (brand, intRam, storage,))
 
     rows = cur.fetchall()
     
