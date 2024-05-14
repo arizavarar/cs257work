@@ -11,6 +11,11 @@ the_paragraph.onmouseenter = function changeColor() {
     the_paragraph.style.backgroundColor = "white";
 }
 
+var month;
+function setMonth(){
+  specs = document.getElementById("myDropdown").value;
+  alert(specs);
+}
 
 function showFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
