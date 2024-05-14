@@ -8,7 +8,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("mainWebsite.html")
 
-@app.route('/<brand>/<ram>/<storage>')
+@app.route('/<brand>/int<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):
     
     # Establishing Environment
