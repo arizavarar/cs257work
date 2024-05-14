@@ -9,7 +9,7 @@ def welcome():
     return render_template("mainWebsite.html")
 
 @app.route('/<brand>')
-def laptopBrandChosen(brand):
+def laptopBrandChosen(brand, ram, storage):
     
     # Establishing Environment
     conn = psycopg2.connect(
@@ -21,8 +21,8 @@ def laptopBrandChosen(brand):
     
     cur = conn.cursor()
 
-    query = "SELECT laptop_name, price FROM laptops WHERE brand = %s;"
-    cur.execute(query, (brand,))
+    query = "SELECT laptop_name, price FROM laptops WHERE brand = %s AND RAM = %s AND Storage_Type = %s;"
+    cur.execute(query, (brand, ram, storage,))
 
     rows = cur.fetchall()
     
