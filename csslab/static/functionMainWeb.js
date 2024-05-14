@@ -11,29 +11,21 @@ the_paragraph.onmouseenter = function changeColor() {
     the_paragraph.style.backgroundColor = "white";
 }
 
-var brand = "";
-function setBrand(){
-    brand = document.getElementById("brand").value;
-}
-
-var ram = "";
-function setBrand(){
-    ram = document.getElementById("ram").value;
-}
-
-var storage = "";
-function setBrand(){
-    storage = document.getElementById("storage").value;
-}
-
 function showFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-var combinedLink = "";
 function submitCompiledLink() {
-    combinedLink = brand.concat(ram, storage);
-    location.href = combinedLink;
+    // Get selected values from dropdowns
+    var brand = document.getElementById("brand").value;
+    var ram = document.getElementById("ram").value;
+    var storage = document.getElementById("storage").value;
+
+    // Construct the URL based on selected values
+    var compiledLink = brand + ram + storage;
+
+    // Redirect to the compiled link
+    window.location.href = compiledLink;
 }
 
 // Close the dropdown menu if the user clicks outside of it
