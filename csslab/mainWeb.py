@@ -8,7 +8,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("mainWebsite.html")
 
-@app.route('/<brand>/<RAM>/<Storage_Type>')
+@app.route('/<brand>/<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):
     
     # Establishing Environment
@@ -35,4 +35,5 @@ def laptopBrandChosen(brand, ram, storage):
 
 if __name__ == '__main__':
     my_port = 5111
-    app.run(host='0.0.0.0', port = my_port) 
+    app.run(host='0.0.0.0', port=my_port)
+
