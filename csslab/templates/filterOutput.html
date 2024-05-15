@@ -3,9 +3,9 @@
     <head>
         <script type="text/javascript">
             // Embedding Python variables into JavaScript
-            var brandName = "{{ data.brandName }}"; // Wrap string variable in double quotes
-            var ramS = "{{ data.ramSize }}"; // Wrap string variable in double quotes
-            var storageS = "{{ data.storageSize }}";
+            var brandName = "{{ data.brandName|safe }}"; // Wrap string variable in double quotes
+            var ramS = "{{ data.ramSize|safe }}"; // Wrap string variable in double quotes
+            var storageS = "{{ data.storageSize|safe }}";
         </script>
         <script type="text/javascript" src="/static/laptopDisplayerFunctions.js"></script>
     </head>
