@@ -22,7 +22,7 @@ def laptopBrandChosen(brand, ram, storage):
     cur = conn.cursor()
     intRam = int(ram)
     intStor = int(ram)
-    query = "SELECT ID, laptop_name, price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
+    query = "SELECT Laptop_Name, lID, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
     cur.execute(query, (brand, intRam, intStor,))
 
     rows = cur.fetchall()
