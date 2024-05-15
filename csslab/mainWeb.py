@@ -8,7 +8,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("mainWebsite.html")
 
-@app.route('/<brand>/<ram>/<storage>')
+@app.route('/<brand>/int<ram>/int<storage>')
 def laptopBrandChosen(brand, ram, storage):
     
     # Establishing Environment
@@ -20,18 +20,29 @@ def laptopBrandChosen(brand, ram, storage):
         password="field599farm")
     
     cur = conn.cursor()
-    intRam = int(ram)
-    intStor = int(storage)
-    query = "SELECT laptop_name, price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
-    cur.execute(query, (brand, intRam, intStor,))
 
+    # Construct the base SQL query
+    query = "SELECT laptop_name, price FROM laptops WHERE true"
+    # Add conditions for brand, ram, and storage if they are provided
+    params = []
+    if brand != "all":
+        query += " AND brand = %s"
+        params.append(brand)
+    if ram != "all":
+        query += " AND RAM = %s"
+        params.append(int(ram))
+    if storage != "all":
+        query += " AND Storage = %s"
+        params.append(int(storage))
+    # Execute the query with appropriate parameters
+    cur.execute(query, tuple(params))
     rows = cur.fetchall()
     
-
     cur.close()
     conn.close()
 
-    return f"Laptops found for brand {brand}: " + str(rows)
+    return f"Laptops found: {rows}"
+
 
 
 if __name__ == '__main__':
