@@ -10,29 +10,34 @@ def welcome():
 
 @app.route('/<brand>/<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):
-    
-    # Establishing Environment
-    conn = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="mosesm2",
-        user="mosesm2",
-        password="field599farm")
-    
-    cur = conn.cursor()
-    intRam = int(ram)
-    intStor = int(ram)
-    query = "SELECT Laptop_Name, lid, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
-    cur.execute(query, (brand, intRam, intStor,))
+    try:
+        # Establish database connection
+        conn = psycopg2.connect(
+            host="localhost",
+            port=5432,
+            database="mosesm2",
+            user="mosesm2",
+            password="field599farm"
+        )
+        cur = conn.cursor()
 
-    rows = cur.fetchall()
+        # Convert ram and storage to integers
+        intRam = int(ram)
+        intStorage = int(storage)
+
+        # Construct the SQL query
+        query = "SELECT laptop_name, lID, price FROM laptops WHERE brand = %s AND ram = %s AND storage = %s;"
+        cur.execute(query, (brand, intRam, intStorage))
+
+        rows = cur.fetchall()
+
+        cur.close()
+        conn.close()
+
+        return render_template("filterOutput.html", laptops=rows)
     
-    cur.close()
-    conn.close()
-
-    return render_template("filterOutput.html")
-    ##return f"Laptops found for brand {brand}: " + str(rows)
-
+    except Exception as e:
+        return f"An error occurred: {e}"
 
 if __name__ == '__main__':
     my_port = 5111
