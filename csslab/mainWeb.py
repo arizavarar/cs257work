@@ -8,7 +8,7 @@ app = Flask(__name__)
 def welcome():
     return render_template("mainWebsite.html")
 
-@app.route('/<brand>/int<ram>/int<storage>')
+@app.route('/<brand>/<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):
     
     # Establishing Environment
@@ -37,7 +37,7 @@ def laptopBrandChosen(brand, ram, storage):
     # Execute the query with appropriate parameters
     cur.execute(query, tuple(params))
     rows = cur.fetchall()
-    
+
     cur.close()
     conn.close()
 
