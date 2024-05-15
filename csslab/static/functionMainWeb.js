@@ -22,7 +22,7 @@ function submitCompiledLink() {
     var storage = document.getElementById("storage").value;
 
     // Construct the URL based on selected values
-    var compiledLink = `/${brand}/${ram}/${storage}`;
+    var compiledLink = "/" + brand + "/" + ram + "/" + storage;
 
     // Redirect to the compiled link
     window.location.href = compiledLink;
