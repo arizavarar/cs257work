@@ -28,9 +28,12 @@ def laptopBrandChosen(brand, ram, storage):
 
     rows = cur.fetchall()
     
+    laptopsName = []
+    laptopsPrices = []
     if len(rows) != 0 :
-        laptopsName = rows[0]
-        laptopsPrices = rows[1]
+        for row in rows:
+            laptopsName.append(row[0])
+            laptopsPrices.append(row[1])
         
     cur.close()
     conn.close()
