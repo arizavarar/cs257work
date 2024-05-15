@@ -31,7 +31,7 @@ def laptopBrandChosen(brand, ram, storage):
     cur.close()
     conn.close()
     
-    data = {'brandName': brand, 'ramSize': ram, 'storageSize': storage}
+    data = {'brandName': rows[0], 'ramSize': rows[1], 'storageSize': storage}
     return render_template("filterOutput.html", data=data)
     ##return f"Laptops found for brand {brand}: " + str(rows)
 
