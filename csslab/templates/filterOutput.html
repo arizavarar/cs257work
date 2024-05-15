@@ -1,13 +1,19 @@
-<head>
-    <link rel="import" href="laptopDisplayer.html" id="myTemplate">
-</head>
-<body>  
-    <p>Testing Window to see if Prints</p>
-    <div id="container"></div>
+ 
+<html>
+    <head>
+        <script type="text/javascript">
+            // Embedding Python variables into JavaScript
+            var brandName = "{{ data.brandName }}"; // Wrap string variable in double quotes
+            var ram = "{{ data.ramSize }}"; // Wrap string variable in double quotes
+            var storage = "{{ data.storageSize }}";
+        </script>
+        <script type="text/javascript" src="laptopDisplayerFunctions.js"></script>
+    </head>
 
-    <script>
-        var importedDoc = document.getElementById('myTemplate').import;
-        var content = importedDoc.querySelector('template').content;
-        document.getElementById('container').appendChild(content.cloneNode(true));
-    </script>
-</body>
+    <div id="myDIV" style="padding:16px;background-color:lightgray">
+        <h3 onmousemove="generateDisplay()">A DIV element</h3>
+    </div>
+
+
+</html>
+    
