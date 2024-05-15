@@ -1,7 +1,13 @@
 <head>
     <link rel="import" href="laptopDisplayer.html" id="myTemplate">
- </head>
- <body>  
+</head>
+<body>  
     <p>Testing Window to see if Prints</p>
     <div id="container"></div>
- </body>
+
+    <script>
+        var importedDoc = document.getElementById('myTemplate').import;
+        var content = importedDoc.querySelector('template').content;
+        document.getElementById('container').appendChild(content.cloneNode(true));
+    </script>
+</body>
