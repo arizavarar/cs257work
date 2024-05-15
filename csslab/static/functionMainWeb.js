@@ -20,7 +20,7 @@ function submitCompiledLink() {
     var brand = document.getElementById("brand").value;
     var ram = document.getElementById("ram").value;
     var storage = document.getElementById("storage").value;
-
+    console.log(ram);
     // Construct the URL based on selected values
     var compiledLink = "/" + brand + "/" + ram + "/" + storage;
 
