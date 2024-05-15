@@ -28,10 +28,13 @@ def laptopBrandChosen(brand, ram, storage):
 
     rows = cur.fetchall()
     
+    laptopsName = rows[0]
+    laptopsPrices = rows[1]
+
     cur.close()
     conn.close()
     
-    data = {'brandName': rows[0], 'ramSize': rows[1], 'storageSize': storage}
+    data = {'brandName': laptopsName, 'ramSize': laptopsPrices, 'storageSize': storage}
     return render_template("filterOutput.html", data=data)
     ##return f"Laptops found for brand {brand}: " + str(rows)
 
