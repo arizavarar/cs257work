@@ -1,5 +1,4 @@
 <template>
-    <body>
     <h2>Lapptop</h2>
     <img src={LaptopImage} alt={ID} width="500" height="333">
     <p class="laptopText-class" id="laptopInfo">
@@ -8,15 +7,14 @@
         Ram: {ramSize} <br>
         Storage size: {storSize}
     </p>
-    </body>
 </template>
 
 <script>
     
     var importedDoc = document.querySelector( '#myTemplate' ).import
     
-    var content = importedDoc.querySelector( 'template' ).content
+    var content = importedDoc.querySelector( 'laptopDisplayer' ).content
     
     document.querySelector( '#container' ).appendChild( content.cloneNode( true ) )
-     
+
 </script>
