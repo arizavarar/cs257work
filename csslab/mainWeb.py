@@ -22,15 +22,16 @@ def laptopBrandChosen(brand, ram, storage):
     cur = conn.cursor()
     intRam = int(ram)
     intStor = int(ram)
-    query = "SELECT laptop_name, price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
-    cur.execute(query, (brand, ram, storage,))
+    query = "SELECT lID, laptop_name, price, FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
+    cur.execute(query, (brand, intRam, intStor,))
 
     rows = cur.fetchall()
     
     cur.close()
     conn.close()
 
-    return f"Laptops found for brand {brand}: " + str(rows)
+    return render_template("filterOutput.html")
+    ##return f"Laptops found for brand {brand}: " + str(rows)
 
 
 if __name__ == '__main__':
