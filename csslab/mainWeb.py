@@ -21,7 +21,7 @@ def laptopBrandChosen(brand, ram, storage):
     
     cur = conn.cursor()
     intRam = int(ram)
-    intStor = storage
+    intStor = int(storage)
     
     query = "SELECT Laptop_Name, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
     cur.execute(query, (brand, intRam, intStor))
