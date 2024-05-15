@@ -26,7 +26,7 @@ def laptopBrandChosen(brand, ram, storage):
         intStorage = int(storage)
 
         # Construct the SQL query
-        query = "SELECT Laptop_Name, lID, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
+        query = "SELECT Laptop_Name, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
         cur.execute(query, (brand, intRam, intStorage))
 
         rows = cur.fetchall()
