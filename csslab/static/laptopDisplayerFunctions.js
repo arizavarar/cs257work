@@ -4,9 +4,9 @@ function onLoadFunct() {
     // Call Generate Display
     pathstring = location.pathname;
     pathlist=pathstring.split('/');
-    brand = pathlist[1];
-    ram = pathlist[2];
-    storage = pathlist[3];
+    brand = pathlist[2];
+    ram = pathlist[3];
+    storage = pathlist[4];
 
     console.log("onLoad: " + brand + " " + ram + " " + storage)
 
