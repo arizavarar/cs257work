@@ -12,7 +12,7 @@ def welcome():
 
 @app.route('/display/<brand>/<ram>/<storage>')
 def displayLaptopChosen(brand,ram,storage):
-    return render_tamplate("filterOutput.html")
+    return render_template("filterOutput.html")
 
 @app.route('/json/<brand>/<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):

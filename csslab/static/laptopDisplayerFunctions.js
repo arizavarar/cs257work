@@ -2,6 +2,14 @@ function onLoadFunct() {
     // Grab the brand, ram, storage from the url
     // GET THE json from the Flask server
     // Call Generate Display
+    pathstring = location.pathname;
+    pathlist=pathstring.split('/');
+    brand = pathlist[1];
+    ram = pathlist[2];
+    storage = pathlist[3];
+
+    queryURL = "/json/"+brand+"/"+ram+"/"+storage;
+    fetch(queryURL).then(response => response.json()).then(data => generateDisplay(data));
 }
 
 function generateDisplay(data){
