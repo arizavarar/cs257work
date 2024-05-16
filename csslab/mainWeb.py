@@ -44,7 +44,7 @@ def laptopBrandChosen(brand, ram, storage):
     cur.close()
     conn.close()
     
-    json_answer = {'brandName': laptopsName, 'ramSize': laptopsPrices}
+    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
     return json.dumps(json_answer)
     ##return f"Laptops found for brand {brand}: " + str(rows)
 
