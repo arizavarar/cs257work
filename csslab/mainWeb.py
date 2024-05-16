@@ -48,10 +48,6 @@ def laptopBrandChosen(brand, ram, storage):
     return json.dumps(json_answer)
     ##return f"Laptops found for brand {brand}: " + str(rows)
 
-def handleJSON():
-        
-
-
 if __name__ == '__main__':
     my_port = 5111
     app.run(host='0.0.0.0', port=my_port)
