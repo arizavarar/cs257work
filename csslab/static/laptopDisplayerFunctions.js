@@ -23,13 +23,13 @@ function generateDisplay(data){
     console.log(laptopName)
     console.log(laptopPrices)
 
-    /*
-    for (let i = 0; i < brandName.size(); i++) {
+    
+    for (let i = 0; i < laptopName.size(); i++) {
         const para = document.createElement("p");
-        para.innerText = "Name of Laptop: " + brandName[i] + " Ram: " + ramS[i] + " Storage size: " + storageS;
+        para.innerText = "Name of Laptop: " + laptopName[i] + " Price: " + laptopPrices[i];
         // Append to body:
         document.getElementById("myDIV").appendChild(para);
       }
-      */
+      
         
 }
