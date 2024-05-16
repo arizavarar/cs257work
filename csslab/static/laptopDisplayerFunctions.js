@@ -17,15 +17,17 @@ function onLoadFunct() {
 function generateDisplay(data){
 
     the_json = data;
-    laptopName = the_json['nameForLaptop']
-    laptopPrices = the_json['priceForLaptop']
+    laptopName = the_json['nameForLaptop'];
+    laptopPrices = the_json['priceForLaptop'];
 
     console.log(laptopName)
     console.log(laptopPrices)
 
     
     for (let i = 0; i < laptopName.length; i++) {
+        const pic = document.createElement("img");
         const para = document.createElement("p");
+        pic.scr = "LaptopImages/laptop_3.png"
         para.innerText = "Name of Laptop: " + laptopName[i] + " Price: " + laptopPrices[i];
         // Append to body:
         document.getElementById("myDIV").appendChild(para);
