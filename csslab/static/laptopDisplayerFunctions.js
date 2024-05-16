@@ -24,7 +24,7 @@ function generateDisplay(data){
     console.log(laptopPrices)
 
     
-    for (let i = 0; i < laptopName.size(); i++) {
+    for (let i = 0; i < laptopName.length; i++) {
         const para = document.createElement("p");
         para.innerText = "Name of Laptop: " + laptopName[i] + " Price: " + laptopPrices[i];
         // Append to body:
