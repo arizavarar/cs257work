@@ -1,19 +1,16 @@
  
 <html>
     <head>
-        <script type="text/javascript">
-            // Embedding Python variables into JavaScript
-            var brandName = "{{ data.brandName|safe }}"; // Wrap string variable in double quotes
-            var ramS = "{{ data.ramSize|safe }}"; // Wrap string variable in double quotes
-            var storageS = "{{ data.storageSize|safe }}";
-        </script>
         <script type="text/javascript" src="/static/laptopDisplayerFunctions.js"></script>
     </head>
 
-    <div id="myDIV" style="padding:16px;background-color:lightgray" onclick="generateDisplay()">
+    <body onload="onLoadFunct()">
+
+    <div id="myDIV" style="padding:16px;background-color:lightgray">
         <h3>A DIV element</h3>
     </div>
 
 
+    </body>
 </html>
     

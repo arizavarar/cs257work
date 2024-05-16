@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import render_template
 import psycopg2
+import json
+
 
 app = Flask(__name__)
 
@@ -8,7 +10,11 @@ app = Flask(__name__)
 def welcome():
     return render_template("mainWebsite.html")
 
-@app.route('/<brand>/<ram>/<storage>')
+@app.route('/display/<brand>/<ram>/<storage>')
+def displayLaptopChosen(brand,ram,storage):
+    return render_tamplate("filterOutput.html")
+
+@app.route('/json/<brand>/<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):
     # Establishing Environment
     conn = psycopg2.connect(
@@ -38,9 +44,12 @@ def laptopBrandChosen(brand, ram, storage):
     cur.close()
     conn.close()
     
-    data = {'brandName': laptopsName, 'ramSize': laptopsPrices, 'storageSize': storage}
-    return render_template("filterOutput.html", data=data)
+    json_answer = {'brandName': laptopsName, 'ramSize': laptopsPrices}
+    return json.dumps(json_answer)
     ##return f"Laptops found for brand {brand}: " + str(rows)
+
+def handleJSON():
+        
 
 
 if __name__ == '__main__':
