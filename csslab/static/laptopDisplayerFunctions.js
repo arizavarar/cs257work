@@ -30,7 +30,9 @@ function generateDisplay(data){
         pic.scr = "LaptopImages/laptop_3.png"
         para.innerText = "Name of Laptop: " + laptopName[i] + " Price: " + laptopPrices[i];
         // Append to body:
+        document.getElementById("myDIV").appendChild(pic);
         document.getElementById("myDIV").appendChild(para);
+        
       }
       
         
