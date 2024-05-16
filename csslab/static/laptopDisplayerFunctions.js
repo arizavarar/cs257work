@@ -17,8 +17,8 @@ function onLoadFunct() {
 function generateDisplay(data){
 
     the_json = data;
-    laptopName = the_json['laptopsName']
-    laptopPrices = the_json['laptopsPrices']
+    laptopName = the_json['nameForLaptop']
+    laptopPrices = the_json['priceForLaptop']
 
     console.log(laptopName)
     console.log(laptopPrices)
