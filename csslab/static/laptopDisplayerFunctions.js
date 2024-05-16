@@ -8,6 +8,8 @@ function onLoadFunct() {
     ram = pathlist[2];
     storage = pathlist[3];
 
+    console.log("onLoad: " + brand + " " + ram + " " + storage)
+
     queryURL = "/json/"+brand+"/"+ram+"/"+storage;
     fetch(queryURL).then(response => response.json()).then(data => generateDisplay(data));
 }
