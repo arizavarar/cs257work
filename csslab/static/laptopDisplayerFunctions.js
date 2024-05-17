@@ -24,7 +24,7 @@ function generateDisplay(data) {
     for (let i = 0; i < laptopNames.length; i++) {
         let pic = document.createElement('img');
         const para = document.createElement("p");
-        pic.src = "\LaptopImages\laptop_3.png";  // Corrected path with forward slashes
+        pic.src = "/static/LaptopImages/laptop_3.png";  // Corrected path with forward slashes
         para.innerText = "Name of Laptop: " + laptopNames[i] + " Price: $" + laptopPrices[i];
         // Append to myDIV:
         const container = document.getElementById("myDIV");
