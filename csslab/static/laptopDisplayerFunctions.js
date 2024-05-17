@@ -43,9 +43,9 @@ function generateDisplay(data) {
     const container = document.getElementById("myDIV");
     container.innerHTML = ''; // Clear previous contents
 
-    if (!data.nameForLaptop || !data.priceForLaptop) {
+    if (data.nameForLaptop.length === 0) {
         const errorMsg = document.createElement("p");
-        errorMsg.innerText = "No laptops found or an error occurred.";
+        errorMsg.innerText = data.message || "No laptops found or an error occurred.";
         container.appendChild(errorMsg);
         return;
     }
