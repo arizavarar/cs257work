@@ -34,6 +34,10 @@ def laptopBrandChosen(brand, ram, storage):
 
     rows = cur.fetchall()
     
+    if not rows:
+        return "No laptops Matched Your Specifications"
+
+
     laptopsName = []
     laptopsPrices = []
     if len(rows) != 0 :
