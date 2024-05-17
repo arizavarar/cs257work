@@ -17,9 +17,9 @@ function onLoadFunct() {
         .catch(error => console.error('Error fetching data:', error));
 }
 function onloadSearchFunct() {
-    const pathstring = location.pathname;
-    const pathlist = pathstring.split('/');
-    const searchedWord = pathlist[2];
+    const searchPathstring = location.pathname;
+    const searchPathlist = searchPathstring.split('/');
+    const searchedWord = searchPathlist[2];
 
     const queryURL = `/search/${searchedWord}`;
     fetch(queryURL)
