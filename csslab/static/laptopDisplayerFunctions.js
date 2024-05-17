@@ -24,9 +24,16 @@ function generateDisplay(data) {
     for (let i = 0; i < laptopNames.length; i++) {
         let pic = document.createElement('img');
         const para = document.createElement("p");
-        let lineBreak = document.createElement("br")
+        let nameText = document.createTextNode("Name of Laptop: " + laptopNames[i]);
+        let priceText = document.createTextNode("Price: $" + laptopPrices[i]);
+        let lineBreak = document.createElement("br");
+        
         pic.src = "/static/LaptopImages/laptop_3.png";  // Corrected path with forward slashes
-        para.innerText = "Name of Laptop: " + laptopNames[i]  + lineBreak +  " Price: $" + laptopPrices[i];
+        
+        para.appendChild(nameText);
+        para.appendChild(lineBreak);
+        para.appendChild(priceText);
+        
         // Append to myDIV:
         const container = document.getElementById("myDIV");
         container.appendChild(pic);
