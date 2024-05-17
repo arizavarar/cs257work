@@ -27,7 +27,8 @@ function generateDisplay(data){
     for (let i = 0; i < laptopName.length; i++) {
         const pic = document.createElement("img");
         const para = document.createElement("p");
-        pic.src = "laptop_3.png";  // Corrected here
+        pic.src = "\\wsl.localhost\Ubuntu\home\babyyoda\cs257work\csslab\static\LaptopImages\laptop_3.png";  // Corrected here
+        
         para.innerText = "Name of Laptop: " + laptopName[i] + " Price: $" + laptopPrices[i];
         // Append to body:
         document.getElementById("myDIV").appendChild(pic);
