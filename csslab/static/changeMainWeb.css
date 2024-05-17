@@ -39,6 +39,13 @@
   background-color: #008CBA;
 }
 
+.secondTitle {
+  text-align: center;
+  color: #008CBA;
+  font: Garamond;
+  font-size: large;
+}
+
 .main_heading{
   text-align: center;
   color: white;
