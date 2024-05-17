@@ -48,6 +48,10 @@ def laptopBrandChosen(brand, ram, storage):
     json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
     return json.dumps(json_answer)
 
+@app.route('/search')
+def searchFunction():
+    return render_template("mainWebsite.html")
+
 if __name__ == '__main__':
     my_port = 5111
     app.run(host='0.0.0.0', port=my_port)
