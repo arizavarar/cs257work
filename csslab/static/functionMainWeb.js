@@ -15,6 +15,12 @@ function showFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+function search(){
+    var searchedWord = document.getElementById("user-search").value;
+    var compiledSearchLink = "/display/" + searchedWord;
+    window.location.href = compiledLink;
+}
+
 function submitCompiledLink() {
     // Get selected values from dropdowns
     var brand = document.getElementById("brand").value;
