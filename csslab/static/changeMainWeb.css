@@ -13,7 +13,8 @@ h1 {
   font-family: Garamond;
   text-align: center;
   color: lightslategray;
-  font-size: 24px;
+  font-size: 23px;
+  text-decoration: underline;
 }
 
 .mainText-class {
