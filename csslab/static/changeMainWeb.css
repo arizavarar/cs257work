@@ -39,34 +39,42 @@
   background-color: #008CBA;
 }
 
-/* Blue */
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+.main_heading{
   text-align: center;
-  /* Align button text to center */
-  width: 1650;
-  /* Set a specific width to center the button */
+  color: white;
+  background-color: #cfe2f3;
+  font: Garamond;
+  font-size: 70px;
+  display: flex;
+  align-items: center;
+  gap: 500px;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.search_bar{
+  width: 225px;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 5px;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
+.search_bar:focus{
+  border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;
 }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-  display: block;
+.search_button{
+  width: 70px;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.search_button:focus{
+  border-color: dodgerblue;
+  box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+.button-cont {
+  display: flex;
+  gap: 15px;
 }
