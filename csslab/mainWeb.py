@@ -1,7 +1,7 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, jsonify
 import psycopg2
 import json
+
 
 
 app = Flask(__name__)
@@ -35,22 +35,18 @@ def laptopBrandChosen(brand, ram, storage):
     rows = cur.fetchall()
     
     if not rows:
-        return "No laptops Matched Your Specifications"
-
-
-    laptopsName = []
-    laptopsPrices = []
-    if len(rows) != 0 :
-        for row in rows:
-            laptopsName.append(row[0])
-            laptopsPrices.append(row[1])
-        
+        cur.close()
+        conn.close()
+        return jsonify(message="No laptops Matched Your Specifications")
+    
+    laptopsName = [row[0] for row in rows]
+    laptopsPrices = [row[1] for row in rows]
+    
     cur.close()
     conn.close()
     
     json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
     return json.dumps(json_answer)
-    ##return f"Laptops found for brand {brand}: " + str(rows)
 
 if __name__ == '__main__':
     my_port = 5111
