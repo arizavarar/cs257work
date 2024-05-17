@@ -16,7 +16,18 @@ function onLoadFunct() {
         .then(data => generateDisplay(data))
         .catch(error => console.error('Error fetching data:', error));
 }
+function onloadSearchFunct() {
+    const pathstring = location.pathname;
+    const pathlist = pathstring.split('/');
+    const searchedWord = pathlist[2];
 
+    const queryURL = `/search/${searchedWord}`;
+    fetch(queryURL)
+        .then(response => response.json())
+        .then(data => generateDisplay(data))
+        .catch(error => console.error('Error fetching data:', error));
+
+}
 function generateDisplay(data) {
     if (!data.nameForLaptop || !data.priceForLaptop) {
         // Display an error message if the expected data is not found

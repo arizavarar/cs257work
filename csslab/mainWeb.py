@@ -48,6 +48,10 @@ def laptopBrandChosen(brand, ram, storage):
     json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
     return json.dumps(json_answer)
 
+@app.route('/display/<wordSeached>')
+def displaySearched(wordSearched):
+    return render_template("filterOutput.html")
+
 @app.route('/search/<wordSearched>')
 def searchFunction(wordSearched):
     conn = psycopg2.connect(
@@ -73,8 +77,6 @@ def searchFunction(wordSearched):
 
     laptopsName = [row[0] for row in rows]
     laptopsPrices = [row[1] for row in rows]
-
-    
 
     cur.close()
     conn.close()
