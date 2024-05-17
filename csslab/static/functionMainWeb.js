@@ -18,7 +18,7 @@ function showFunction() {
 function search(){
     var searchedWord = document.getElementById("user-search").value;
     var compiledSearchLink = "/display/" + searchedWord;
-    window.location.href = compiledLink;
+    window.location.href = compiledSearchLink;
 }
 
 function submitCompiledLink() {
