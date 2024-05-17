@@ -8,8 +8,8 @@
 .introductionText-class {
   font-family: sans-serif;
   text-align: center;
-  background-color: lightgray;
-  color: DarkCyan;
+  background-color: #cfe2f3;
+  color: lightcyan;
 }
 
 .mainText-class {
@@ -43,7 +43,7 @@
   text-align: center;
   color: #008CBA;
   font: Garamond;
-  font-size: large;
+  font-size: 150px;
 }
 
 .main_heading{
