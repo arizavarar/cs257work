@@ -2,8 +2,6 @@ from flask import Flask, render_template, jsonify
 import psycopg2
 import json
 
-
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,12 +9,11 @@ def welcome():
     return render_template("mainWebsite.html")
 
 @app.route('/display/<brand>/<ram>/<storage>')
-def displayLaptopChosen(brand,ram,storage):
+def displayLaptopChosen(brand, ram, storage):
     return render_template("filterOutput.html")
 
 @app.route('/json/<brand>/<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):
-    # Establishing Environment
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -64,9 +61,8 @@ def searchFunction(wordSearched):
     
     cur = conn.cursor()
     
-    
     query = "SELECT Laptop_Name, Price FROM laptops WHERE Brand LIKE %s OR Laptop_Name LIKE %s;"
-    cur.execute(query,(wordSearched,wordSearched ))
+    cur.execute(query, ('%' + wordSearched + '%', '%' + wordSearched + '%'))
 
     rows = cur.fetchall()
 
@@ -87,4 +83,3 @@ def searchFunction(wordSearched):
 if __name__ == '__main__':
     my_port = 5111
     app.run(host='0.0.0.0', port=my_port)
-

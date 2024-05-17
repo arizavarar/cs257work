@@ -1,49 +1,39 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("brand").addEventListener("change", onLoadFunct);
-    document.getElementById("ram").addEventListener("change", onLoadFunct);
-    document.getElementById("storage").addEventListener("change", onLoadFunct);
+    document.getElementById("submit_specs_button").addEventListener("click", submitCompiledLink);
     document.getElementById("search_button").addEventListener("click", onloadSearchFunct);
-    document.getElementById("submit_specs_button").addEventListener("click", onLoadFunct);
 });
 
-function onLoadFunct() {
-    const brand = document.getElementById("brand").value;
-    const ram = document.getElementById("ram").value;
-    const storage = document.getElementById("storage").value;
+function onloadFunct() {
+    const pathstring = location.pathname;
+    const pathlist = pathstring.split('/');
+    const brand = pathlist[2];
+    const ram = pathlist[3];
+    const storage = pathlist[4];
 
-    if (!brand || !ram || !storage) {
-        console.log("Incomplete filter selection.");
-        return;
+    if (brand && ram && storage) {
+        fetch(`/json/${brand}/${ram}/${storage}`)
+            .then(response => response.json())
+            .then(data => generateDisplay(data))
+            .catch(error => console.error('Error fetching data:', error));
     }
-
-    console.log("onLoad: " + brand + " " + ram + " " + storage);
-
-    const queryURL = `/json/${brand}/${ram}/${storage}`;
-    fetch(queryURL)
-        .then(response => response.json())
-        .then(data => generateDisplay(data))
-        .catch(error => console.error('Error fetching data:', error));
 }
 
 function onloadSearchFunct() {
     const searchedWord = document.getElementById("user-search").value;
+
     if (!searchedWord) {
-        console.log("Search query is empty.");
+        alert("Please enter a search term.");
         return;
     }
 
-    const queryURL = `/search/${searchedWord}`;
-    fetch(queryURL)
-        .then(response => response.json())
-        .then(data => generateDisplay(data))
-        .catch(error => console.error('Error fetching data:', error));
+    window.location.href = `/display/${searchedWord}`;
 }
 
 function generateDisplay(data) {
     const container = document.getElementById("myDIV");
     container.innerHTML = ''; // Clear previous contents
 
-    if (data.nameForLaptop.length === 0) {
+    if (!data.nameForLaptop || data.nameForLaptop.length === 0) {
         const errorMsg = document.createElement("p");
         errorMsg.innerText = data.message || "No laptops found or an error occurred.";
         container.appendChild(errorMsg);
@@ -52,9 +42,6 @@ function generateDisplay(data) {
 
     const laptopNames = data.nameForLaptop;
     const laptopPrices = data.priceForLaptop;
-
-    console.log(laptopNames);
-    console.log(laptopPrices);
 
     for (let i = 0; i < laptopNames.length; i++) {
         let pic = document.createElement('img');
