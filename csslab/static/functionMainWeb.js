@@ -30,7 +30,7 @@ input.addEventListener("keypress", function(event) {
     
     event.preventDefault();
     
-    document.getElementById("user-search").click();
+    document.getElementById("search_button").click();
   }
 });
 
