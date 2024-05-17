@@ -24,13 +24,12 @@ function generateDisplay(data) {
     for (let i = 0; i < laptopNames.length; i++) {
         let pic = document.createElement('img');
         const para = document.createElement("p");
-        let lineBreak = document.createElement('br');
+        let lineBreak = document.createElement("br")
         pic.src = "/static/LaptopImages/laptop_3.png";  // Corrected path with forward slashes
-        para.innerText = "Name of Laptop: " + laptopNames[i]  +  " Price: $" + laptopPrices[i];
+        para.innerText = "Name of Laptop: " + laptopNames[i]  + lineBreak +  " Price: $" + laptopPrices[i];
         // Append to myDIV:
         const container = document.getElementById("myDIV");
         container.appendChild(pic);
-        container.appendChild(lineBreak);
         container.appendChild(para);
     }
 }
