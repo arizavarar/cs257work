@@ -2,20 +2,20 @@ the_heading = document.getElementById("Title");
 
 function rickRoll() {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
-}    
+}
 
 the_paragraph = document.getElementById("paragraph1");
 
-the_paragraph.onmouseenter = function() { 
+the_paragraph.onmouseenter = function () {
     the_paragraph.style.color = "RoyalBlue";
     the_paragraph.style.backgroundColor = "white";
 };
 
 function showFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("myDropdown").classList.toggle("show");
 }
 
-function search(){
+function search() {
     var searchedWord = document.getElementById("user-search").value;
     var compiledSearchLink = "/display/" + searchedWord;
     window.location.href = compiledSearchLink;
