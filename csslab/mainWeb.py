@@ -65,7 +65,8 @@ def searchFunction(wordSearched):
     cur = conn.cursor()
     
     
-    query = "SELECT Laptop_Name, Price FROM laptops WHERE Brand LIKE %s OR Laptop_Name LIKE %s;"
+    query = """SELECT Laptop_Name, Price FROM laptops WHERE Brand LIKE %s OR Laptop_Name LIKE %s OR Price LIKE %s 
+    OR Processor_Brand LIKE %s OR GPU LIKE %s OR OS LIKE %s;"""""
     cur.execute(query,(wordSearched,wordSearched ))
 
     rows = cur.fetchall()
