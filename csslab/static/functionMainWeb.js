@@ -23,7 +23,6 @@ function search() {
 
 var input = document.getElementById("user-search");
 
-
 input.addEventListener("keypress", function(event) {
   
   if (event.key === "Enter") {
