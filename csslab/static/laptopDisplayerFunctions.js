@@ -14,24 +14,21 @@ function onLoadFunct() {
     fetch(queryURL).then(response => response.json()).then(data => generateDisplay(data));
 }
 
-function generateDisplay(data){
+function generateDisplay(data) {
+    const laptopNames = data['nameForLaptop'];
+    const laptopPrices = data['priceForLaptop'];
 
-    the_json = data;
-    laptopName = the_json['nameForLaptop'];
-    laptopPrices = the_json['priceForLaptop'];
+    console.log(laptopNames);
+    console.log(laptopPrices);
 
-    console.log(laptopName)
-    console.log(laptopPrices)
-
-    
-    for (let i = 0; i < laptopName.length; i++) {
+    for (let i = 0; i < laptopNames.length; i++) {
         const pic = document.createElement("img");
         const para = document.createElement("p");
-        pic.src = "static\LaptopImages\laptop_3.png";  // Corrected here
-        
-        para.innerText = "Name of Laptop: " + laptopName[i] + " Price: $" + laptopPrices[i];
-        // Append to body:
-        document.getElementById("myDIV").appendChild(pic);
-        document.getElementById("myDIV").appendChild(para);
-    } 
+        pic.src = "static/LaptopImages/laptop_3.png";  // Corrected path with forward slashes
+        para.innerText = "Name of Laptop: " + laptopNames[i] + " Price: $" + laptopPrices[i];
+        // Append to myDIV:
+        const container = document.getElementById("myDIV");
+        container.appendChild(pic);
+        container.appendChild(para);
+    }
 }
