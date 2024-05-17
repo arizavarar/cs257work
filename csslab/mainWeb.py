@@ -63,10 +63,20 @@ def searchFunction(wordSearched):
     )
     
     cur = conn.cursor()
-    
-    
-    query = "SELECT Laptop_Name, Price FROM laptops WHERE Brand LIKE %s OR Laptop_Name LIKE %s OR Price LIKE %s OR Processor_Brand LIKE %s OR GPU LIKE %s OR OS LIKE %s;"
-    cur.execute(query,(wordSearched,wordSearched,wordSearched,wordSearched,wordSearched,wordSearched ))
+
+    query = """
+    SELECT Laptop_Name, Price 
+    FROM laptops 
+    WHERE 
+        Brand LIKE %s OR 
+        Laptop_Name LIKE %s OR 
+        CAST(Price AS TEXT) LIKE %s OR 
+        Processor_Brand LIKE %s OR 
+        GPU LIKE %s OR 
+        OS LIKE %s;
+    """
+    search_pattern = '%' + wordSearched + '%'
+    cur.execute(query, (search_pattern, search_pattern, search_pattern, search_pattern, search_pattern, search_pattern))
 
     rows = cur.fetchall()
 
@@ -77,8 +87,6 @@ def searchFunction(wordSearched):
 
     laptopsName = [row[0] for row in rows]
     laptopsPrices = [row[1] for row in rows]
-
-    
 
     cur.close()
     conn.close()
