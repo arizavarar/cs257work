@@ -95,6 +95,6 @@ def searchFunction(wordSearched):
     return json.dumps(json_answer)
 
 if __name__ == '__main__':
-    my_port = 5111
+    my_port = 5112
     app.run(host='0.0.0.0', port=my_port)
 
