@@ -2,6 +2,8 @@ from flask import Flask, render_template, jsonify
 import psycopg2
 import json
 
+
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -75,6 +77,8 @@ def searchFunction(wordSearched):
 
     laptopsName = [row[0] for row in rows]
     laptopsPrices = [row[1] for row in rows]
+
+    
 
     cur.close()
     conn.close()
