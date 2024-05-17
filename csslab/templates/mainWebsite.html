@@ -1,43 +1,31 @@
-<html>
+<head>
+    <link rel="stylesheet" href="/static/changeMainWeb.css">
+    <script src="/static/base.js" defer></script>
+    <script src="/static/functionMainWeb.js" defer></script>
+</head>
+<body onclick="clickOut(event)">
 
-<body onclick="clickOut(event)" onload="changeColor()">
-
-    <head>
-        <link rel="stylesheet" href="/static/changeMainWeb.css">
-        <script src="/static/base.js"></script>
-        <script src="/static/functionMainWeb.js"> </script>
-    </head>
-
-
-    <h1 class="main_heading" id="Title" >
-    
-            <div>
+    <h1 class="main_heading" id="Title">
+        <div>
             <img id="logo" src="/static/possible_logo.png" width="60%" height="55%">
-            </div>
-        
-            <div class="button-cont">
+        </div>
+
+        <div class="button-cont">
             <a href="/">
-                <button class="search_button" id="home_button">
-                    Home
-                </button>
+                <button class="search_button" id="home_button">Home</button>
             </a>
-        
             <a href="/about-us">
-                <button class="search_button" id="about_us_button" onclick="go_about_us()">
-                    About Us
-                </button>
+                <button class="search_button" id="about_us_button" onclick="go_about_us()">About Us</button>
             </a>
-            </div>
-        
-            <div class="button-cont">
-                <input class="search_bar" id="user-search" placeholder="Search">
-                <button class="search_button" id="search_button" onclick="search()">
-                    Search
-                </button>
-            </div>
-        
-          </h1>
-        <h1 class="secondTitle">Choose Laptop Specifications Here!</h1>
+        </div>
+
+        <div class="button-cont">
+            <input class="search_bar" id="user-search" placeholder="Search">
+            <button class="search_button" id="search_button">Search</button>
+        </div>
+    </h1>
+
+    <h1 class="secondTitle">Choose Laptop Specifications Here!</h1>
     <h3 class="introductionText-class" id="paragraph1">
         This is a webpage dedicated to laptops! It will list all the laptops for the brands listed in the dropdown menu
         and other specifications in other dropdowns!
@@ -45,7 +33,7 @@
 
     <form style="text-align: center;">
         What Brand?
-        <select id="brand" onchange="setBrand()">
+        <select id="brand">
             <option selected disabled>Choose Brand</option>
             <option value="apple">Apple</option>
             <option value="dell">Dell</option>
@@ -54,7 +42,7 @@
         </select>
 
         What Ram Size?
-        <select id="ram" onchange="setRam()">
+        <select id="ram">
             <option selected disabled>Choose Ram Size</option>
             <option value="4">4 GB</option>
             <option value="8">8 GB</option>
@@ -63,7 +51,7 @@
         </select>
 
         What Storage Size?
-        <select id="storage" onchange="setStorage()">
+        <select id="storage">
             <option selected disabled>Choose Storage Size</option>
             <option value="64">64 GB</option>
             <option value="256">256 GB</option>
@@ -72,8 +60,11 @@
         </select>
     </form>
     <div class="button-container">
-        <button type="button" class="button button2" onclick="submitCompiledLink()">Submit Specs</button>
+        <button type="button" class="button button2" id="submit_specs_button">Submit Specs</button>
     </div>
-</body>
 
+    <div class="mainOutput-class" id="myDIV"></div>
+    
+    <script src="/static/laptopDisplayerFunctions.js" defer></script>
+</body>
 </html>
