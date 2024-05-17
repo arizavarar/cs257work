@@ -32,6 +32,7 @@ function generateDisplay(data) {
         
         para.appendChild(nameText);
         para.appendChild(lineBreak);
+        para.appendChild(lineBreak);
         para.appendChild(priceText);
         
         // Append to myDIV:
