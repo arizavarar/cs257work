@@ -50,7 +50,7 @@ def laptopBrandChosen(brand, ram, storage):
 
 @app.route('/display/<wordSearched>')
 def displaySearched(wordSearched):
-    return render_template("filterOutput.html")
+    return render_template("searchOutput.html")
 
 @app.route('/search/<wordSearched>')
 def searchFunction(wordSearched):
