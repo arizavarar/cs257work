@@ -48,9 +48,39 @@ def laptopBrandChosen(brand, ram, storage):
     json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
     return json.dumps(json_answer)
 
-@app.route('/search')
-def searchFunction():
-    return render_template("mainWebsite.html")
+@app.route('/search/<wordSearched>')
+def searchFunction(wordSearched):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="mosesm2",
+        user="mosesm2",
+        password="field599farm"
+    )
+    
+    cur = conn.cursor()
+    
+    
+    query = "SELECT Laptop_Name, Price FROM laptops WHERE Brand LIKE %s OR Laptop_Name LIKE %s;"
+    cur.execute(query,(wordSearched,wordSearched ))
+
+    rows = cur.fetchall()
+
+    if not rows:
+        cur.close()
+        conn.close()
+        return jsonify(message="No laptops Matched Your Specifications")
+
+    laptopsName = [row[0] for row in rows]
+    laptopsPrices = [row[1] for row in rows]
+
+    
+
+    cur.close()
+    conn.close()
+
+    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
+    return json.dumps(json_answer)
 
 if __name__ == '__main__':
     my_port = 5111
