@@ -5,6 +5,8 @@
     text-decoration: underline;
 }
 .mainOutputClass {
+    padding:16px;
+    background-color:lightgray;
     font-family: sans-serif;
     text-align: center;
     color: DarkSlateBlue;
