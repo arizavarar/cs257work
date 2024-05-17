@@ -1,4 +1,4 @@
-the_heading = document.getElementById("webTitle");
+the_heading = document.getElementById("Title");
 
 function rickRoll() {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
