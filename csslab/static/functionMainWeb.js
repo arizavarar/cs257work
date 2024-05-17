@@ -21,18 +21,6 @@ function search() {
     window.location.href = compiledSearchLink;
 }
 
-var input = document.getElementById("user-search");
-
-input.addEventListener("keypress", function(event) {
-  
-  if (event.key === "Enter") {
-    
-    event.preventDefault();
-    
-    document.getElementById("search_button").click();
-  }
-});
-
 function submitCompiledLink() {
     // Get selected values from dropdowns
     var brand = document.getElementById("brand").value;
