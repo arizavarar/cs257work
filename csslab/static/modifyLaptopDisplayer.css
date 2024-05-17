@@ -4,9 +4,10 @@
     color: DarkSlateBlue;
     text-decoration: underline;
 }
+
 .mainOutput-class {
-    padding:16px;
-    background-color:lightblue;
+    padding: 16px;
+    background-color: lightblue;
     font-family: Garamond;
     text-align: center;
     color: lightslategray;

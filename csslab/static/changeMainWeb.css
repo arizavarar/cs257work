@@ -52,7 +52,7 @@ h1 {
   font-size: 70px;
 }
 
-.main_heading{
+.main_heading {
   text-align: center;
   color: white;
   background-color: #cfe2f3;
@@ -63,26 +63,26 @@ h1 {
   gap: 500px;
 }
 
-.search_bar{
+.search_bar {
   width: 225px;
   border: 2px solid black;
   border-radius: 4px;
   padding: 5px;
 }
 
-.search_bar:focus{
+.search_bar:focus {
   border-color: dodgerblue;
   box-shadow: 0 0 8px 0 dodgerblue;
 }
 
-.search_button{
+.search_button {
   width: 70px;
   border: 2px solid black;
   border-radius: 4px;
   padding: 5px;
 }
 
-.search_button:focus{
+.search_button:focus {
   border-color: dodgerblue;
   box-shadow: 0 0 8px 0 dodgerblue;
 }
