@@ -48,7 +48,7 @@ def laptopBrandChosen(brand, ram, storage):
     json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
     return json.dumps(json_answer)
 
-@app.route('/display/<wordSeached>')
+@app.route('/display/<wordSearched>')
 def displaySearched(wordSearched):
     return render_template("filterOutput.html")
 
