@@ -1,20 +1,15 @@
-
-<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Laptop Finder</title>
     <link rel="stylesheet" href="/static/changeMainWeb.css">
     <script src="/static/base.js" defer></script>
     <script src="/static/functionMainWeb.js" defer></script>
 </head>
-<body>
+<body onclick="clickOut(event)">
 
     <h1 class="main_heading" id="Title">
         <div>
             <img id="logo" src="/static/possible_logo.png" width="60%" height="55%">
         </div>
-    
+
         <div class="button-cont">
             <a href="/">
                 <button class="search_button" id="home_button">Home</button>
@@ -23,7 +18,7 @@
                 <button class="search_button" id="about_us_button" onclick="go_about_us()">About Us</button>
             </a>
         </div>
-    
+
         <div class="button-cont">
             <input class="search_bar" id="user-search" placeholder="Search">
             <button class="search_button" id="search_button">Search</button>
@@ -31,7 +26,6 @@
     </h1>
 
     <h1 class="secondTitle">Choose Laptop Specifications Here!</h1>
-
     <h3 class="introductionText-class" id="paragraph1">
         This is a webpage dedicated to laptops! It will list all the laptops for the brands listed in the dropdown menu
         and other specifications in other dropdowns!
@@ -65,10 +59,12 @@
             <option value="1024">1024 GB</option>
         </select>
     </form>
-
     <div class="button-container">
         <button type="button" class="button button2" id="submit_specs_button">Submit Specs</button>
     </div>
 
+    <div class="mainOutput-class" id="myDIV"></div>
+    
+    <script src="/static/laptopDisplayerFunctions.js" defer></script>
 </body>
 </html>
