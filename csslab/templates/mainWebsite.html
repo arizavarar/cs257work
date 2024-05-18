@@ -1,6 +1,6 @@
 <html>
 
-<body onclick="clickOut(event)" onload="changeColor()">
+<body onclick="clickOut(event)">
 
     <head>
         <link rel="stylesheet" href="/static/changeMainWeb.css">
@@ -47,7 +47,7 @@
 
     <form style="text-align: center;">
         What Brand?
-        <select id="brand" onchange="setBrand()">
+        <select id="brand">
             <option selected disabled>Choose Brand</option>
             <option value="apple">Apple</option>
             <option value="dell">Dell</option>
@@ -56,7 +56,7 @@
         </select>
 
         What Ram Size?
-        <select id="ram" onchange="setRam()">
+        <select id="ram">
             <option selected disabled>Choose Ram Size</option>
             <option value="4">4 GB</option>
             <option value="8">8 GB</option>
@@ -65,7 +65,7 @@
         </select>
 
         What Storage Size?
-        <select id="storage" onchange="setStorage()">
+        <select id="storage">
             <option selected disabled>Choose Storage Size</option>
             <option value="64">64 GB</option>
             <option value="256">256 GB</option>

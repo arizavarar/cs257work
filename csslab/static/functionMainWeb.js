@@ -1,26 +1,15 @@
 the_heading = document.getElementById("Title");
-
+//function that redirects user to Rickroll video
 function rickRoll() {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
 }
-
-the_paragraph = document.getElementById("paragraph1");
-
-the_paragraph.onmouseenter = function () {
-    the_paragraph.style.color = "RoyalBlue";
-    the_paragraph.style.backgroundColor = "white";
-};
-
-function showFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
+//Retrieves input from search bar, and compiles it into a link, to redirect user to output page
 function search() {
     var searchedWord = document.getElementById("user-search").value;
     var compiledSearchLink = "/display/" + searchedWord;
     window.location.href = compiledSearchLink;
 }
-
+//Retrieves input dropdwon menus, and compiles it into a link, to redirect user to output page
 function submitCompiledLink() {
     // Get selected values from dropdowns
     var brand = document.getElementById("brand").value;

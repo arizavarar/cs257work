@@ -6,14 +6,18 @@ import json
 
 app = Flask(__name__)
 
+
+#Welcome Page
 @app.route('/')
 def welcome():
     return render_template("mainWebsite.html")
 
+#Displays the filtered options results
 @app.route('/display/<brand>/<ram>/<storage>')
 def displayLaptopChosen(brand,ram,storage):
     return render_template("filterOutput.html")
 
+#Gathers the result for filtered options and return the JSON data
 @app.route('/json/<brand>/<ram>/<storage>')
 def laptopBrandChosen(brand, ram, storage):
     # Establishing Environment
@@ -48,10 +52,13 @@ def laptopBrandChosen(brand, ram, storage):
     json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
     return json.dumps(json_answer)
 
+
+#Displays the search result peage
 @app.route('/display/<wordSearched>')
 def displaySearched(wordSearched):
     return render_template("searchOutput.html")
 
+#Gather the searched word content and returns JSON data
 @app.route('/search/<wordSearched>')
 def searchFunction(wordSearched):
     conn = psycopg2.connect(
