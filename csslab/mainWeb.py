@@ -40,15 +40,14 @@ def laptopBrandChosen(brand, ram, storage):
         conn.close()
         return jsonify(message="No laptops Matched Your Specifications")
     
-    laptopImageIndex = [row[0] for row in rows]
-    laptopsName = [row[1] for row in rows]
-    laptopsPrices = [row[2] for row in rows]
+    laptopsName = [row[0] for row in rows]
+    laptopsPrices = [row[1] for row in rows]
     
     
     cur.close()
     conn.close()
     
-    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices, 'laptopIndex': laptopImageIndex}
+    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
     return json.dumps(json_answer)
 
 
