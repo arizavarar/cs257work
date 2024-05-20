@@ -71,7 +71,7 @@ def searchFunction(wordSearched):
     cur = conn.cursor()
 
     query = """
-    SELECT Laptop_Name, Price 
+    SELECT Laptop_Name, Price, laptopindex 
     FROM laptops 
     WHERE 
         Brand iLIKE %s OR 
@@ -93,11 +93,13 @@ def searchFunction(wordSearched):
 
     laptopsName = [row[0] for row in rows]
     laptopsPrices = [row[1] for row in rows]
+    laptopImages = [row[2] for row in rows]
+
 
     cur.close()
     conn.close()
 
-    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
+    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices, 'imageIndex': laptopImages}
     return json.dumps(json_answer)
 
 if __name__ == '__main__':
