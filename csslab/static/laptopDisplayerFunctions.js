@@ -58,7 +58,7 @@ function generateDisplay(data) {
     container.innerHTML = ''; // Clear previous contents
 
     for (let i = 0; i < laptopNames.length; i++) {
-        let pic = document.createElement('img');
+        const pic = document.createElement('img');
         const nameHeading = document.createElement("h2");
         const pricePara = document.createElement("h3");
 
