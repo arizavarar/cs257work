@@ -38,7 +38,7 @@ function onloadSearchFunct() {
 //This file needs to be worked on to properly display the correct image for 
 //each laptop
 function generateDisplay(data) {
-    if (!data.nameForLaptop || !data.priceForLaptop || !data.laptopIndex) {
+    if (!data.nameForLaptop || !data.priceForLaptop) {
         // Display an error message if the expected data is not found
         const container = document.getElementById("myDIV");
         const errorMsg = document.createElement("p");
@@ -49,7 +49,7 @@ function generateDisplay(data) {
 
     const laptopNames = data.nameForLaptop;
     const laptopPrices = data.priceForLaptop;
-    const laptopImageIndex = data.laptopIndex;
+    //const laptopImageIndex = data.laptopIndex;
 
     console.log(laptopNames);
     console.log(laptopPrices);
@@ -65,13 +65,13 @@ function generateDisplay(data) {
         let nameText = document.createTextNode("Name of Laptop: " + laptopNames[i]);
         let priceText = document.createTextNode("Price: $" + laptopPrices[i]);
 
-        pic.src = "/static/LaptopImages/laptop_" + laptopImageIndex[i].toString() + ".png";
+        //pic.src = "/static/LaptopImages/laptop_" + laptopImageIndex[i].toString() + ".png";
 
         nameHeading.appendChild(nameText);
         pricePara.appendChild(priceText);
 
         // Append to myDIV:
-        container.appendChild(pic);
+        //container.appendChild(pic);
         container.appendChild(nameHeading);
         container.appendChild(pricePara);
     }
