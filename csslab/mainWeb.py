@@ -33,7 +33,7 @@ def laptopBrandChosen(brand, ram, storage):
     intRam = int(ram)
     intStor = int(storage)
     
-    query = "SELECT Laptop_Name, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
+    query = "SELECT laptopIndex, Laptop_Name, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
     cur.execute(query, (brand, intRam, intStor))
 
     rows = cur.fetchall()
@@ -43,13 +43,15 @@ def laptopBrandChosen(brand, ram, storage):
         conn.close()
         return jsonify(message="No laptops Matched Your Specifications")
     
-    laptopsName = [row[0] for row in rows]
-    laptopsPrices = [row[1] for row in rows]
+    laptopImageIndex = [row[0] for row in rows]
+    laptopsName = [row[1] for row in rows]
+    laptopsPrices = [row[2] for row in rows]
+    
     
     cur.close()
     conn.close()
     
-    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
+    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices, 'laptopIndex': laptopImageIndex}
     return json.dumps(json_answer)
 
 
@@ -75,12 +77,12 @@ def searchFunction(wordSearched):
     SELECT Laptop_Name, Price 
     FROM laptops 
     WHERE 
-        Brand LIKE %s OR 
-        Laptop_Name LIKE %s OR 
-        CAST(Price AS TEXT) LIKE %s OR 
-        Processor_Brand LIKE %s OR 
-        GPU LIKE %s OR 
-        OS LIKE %s;
+        Brand iLIKE %s OR 
+        Laptop_Name iLIKE %s OR 
+        CAST(Price AS TEXT) iLIKE %s OR 
+        Processor_Brand iLIKE %s OR 
+        GPU iLIKE %s OR 
+        OS iLIKE %s;
     """
     search_pattern = '%' + wordSearched + '%'
     cur.execute(query, (search_pattern, search_pattern, search_pattern, search_pattern, search_pattern, search_pattern))
@@ -102,6 +104,6 @@ def searchFunction(wordSearched):
     return json.dumps(json_answer)
 
 if __name__ == '__main__':
-    my_port = 5111
+    my_port = 5112
     app.run(host='0.0.0.0', port=my_port)
 
