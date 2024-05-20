@@ -2,10 +2,7 @@ from flask import Flask, render_template, jsonify
 import psycopg2
 import json
 
-
-
 app = Flask(__name__)
-
 
 #Welcome Page
 @app.route('/')
@@ -33,7 +30,7 @@ def laptopBrandChosen(brand, ram, storage):
     intRam = int(ram)
     intStor = int(storage)
     
-    query = "SELECT laptopIndex, Laptop_Name, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
+    query = "SELECT laptopindex, Laptop_Name, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
     cur.execute(query, (brand, intRam, intStor))
 
     rows = cur.fetchall()
