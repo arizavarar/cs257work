@@ -21,9 +21,9 @@ def laptopBrandChosen(brand, ram, storage):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="mosesm2",
-        user="mosesm2",
-        password="field599farm"
+        database="arizavarar",
+        user="arizavarar",
+        password="expo795beach"
     )
     
     cur = conn.cursor()
@@ -63,9 +63,9 @@ def searchFunction(wordSearched):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="mosesm2",
-        user="mosesm2",
-        password="field599farm"
+        database="arizavarar",
+        user="arizavarar",
+        password="expo795beach"
     )
     
     cur = conn.cursor()
