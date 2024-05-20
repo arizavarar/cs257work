@@ -30,7 +30,7 @@ def laptopBrandChosen(brand, ram, storage):
     intRam = int(ram)
     intStor = int(storage)
     
-    query = "SELECT CPU, Laptop_Name, Price FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
+    query = "SELECT Laptop_Name, Price, laptopindex FROM laptops WHERE Brand = %s AND RAM = %s AND Storage = %s;"
     cur.execute(query, (brand, intRam, intStor))
 
     rows = cur.fetchall()
@@ -42,12 +42,13 @@ def laptopBrandChosen(brand, ram, storage):
     
     laptopsName = [row[0] for row in rows]
     laptopsPrices = [row[1] for row in rows]
+    laptopImages = [row[2] for row in rows]
     
     
     cur.close()
     conn.close()
     
-    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices}
+    json_answer = {'nameForLaptop': laptopsName, 'priceForLaptop': laptopsPrices, 'imageIndex': laptopImages}
     return json.dumps(json_answer)
 
 

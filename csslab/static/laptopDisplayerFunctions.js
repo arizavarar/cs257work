@@ -49,11 +49,11 @@ function generateDisplay(data) {
 
     const laptopNames = data.nameForLaptop;
     const laptopPrices = data.priceForLaptop;
-    //const laptopImageIndex = data.laptopIndex;
+    const laptopImageIndex = data.imageIndex;
 
     console.log(laptopNames);
     console.log(laptopPrices);
-
+    console.log(laptopImageIndex);
     const container = document.getElementById("myDIV");
     container.innerHTML = ''; // Clear previous contents
 
@@ -65,13 +65,13 @@ function generateDisplay(data) {
         let nameText = document.createTextNode("Name of Laptop: " + laptopNames[i]);
         let priceText = document.createTextNode("Price: $" + laptopPrices[i]);
 
-        //pic.src = "/static/LaptopImages/laptop_" + laptopImageIndex[i].toString() + ".png";
+        pic.src = "/static/LaptopImages/laptop_" + laptopImageIndex[i].toString() + ".png";
 
         nameHeading.appendChild(nameText);
         pricePara.appendChild(priceText);
 
         // Append to myDIV:
-        //container.appendChild(pic);
+        container.appendChild(pic);
         container.appendChild(nameHeading);
         container.appendChild(pricePara);
     }
